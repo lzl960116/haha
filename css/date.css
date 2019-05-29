@@ -88,10 +88,9 @@ body {
     opacity: 0.8;
 }
 .third {
-    margin: 10% 140px;
+    margin: 10% 220px;
     width: 800px;
     height: 80px;
-    text-align: center;
     line-height: 80px;
     border-radius: 10px;
     position: absolute;
