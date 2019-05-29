@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="./css/date.css">
+</head>
+
+<body>
+<div class="first">
+    <span> </span>天<span> </span>小时<span> </span>分钟<span> </span>秒
+</div>
+<div class="second">
+    <img src="./image/zuozhu.jpg" alt="">
+</div>
+<div class="third">
+    <span class="s1">距仙女师傅下次 <span class="s2">生日</span>倒计时：</span>
+</div>
+<script>
+    window.onload = function () {
+        alert('刚学的一点小玩意儿送给师傅^.^');
+        let spans = document.getElementsByTagName("span");
+        f();
+        setInterval(f, 1000);
+        function f() {
+            let arr = [];
+            let date = new Date();
+            let birthday = new Date(2020, 3, 28, 0, 0, 0, 0);
+            let time = Math.floor((birthday.getTime() - date.getTime()) / 1000);
+            let day = Math.floor(time / 60 / 60 / 24);
+            arr.push(day);
+            time %= (60 * 60 * 24);
+            let hours = Math.floor(time / 60 / 60);
+            arr.push(hours);
+            time %= (60 * 60);
+            let min = Math.floor(time / 60);
+            let sec = time % 60;
+            arr.push(min, sec);
+            arr.forEach(function(value, index) {
+                spans[index].innerHTML = value;
+            })
+        }
+    }
+</script>
+</body>
+</html>
